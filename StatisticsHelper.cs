@@ -1,4 +1,17 @@
 public static int CalculateMin(int[] values)
 {
-    return 0;
+    if (values.Length == 0)
+        return 0;
+
+    int min = values[0];
+
+    foreach (var value in values)
+    {
+        if (value < min)
+        {
+            min = value;
+        }
+    }
+
+    return min;
 }
