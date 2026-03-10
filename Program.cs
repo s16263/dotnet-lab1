@@ -7,7 +7,7 @@ Console.WriteLine($"You entered: {input}");
 
 if (!double.TryParse(input, out double number))
 {
-    Console.WriteLine("Invalid input. Please enter a number.");
+    Console.WriteLine("Error: input is not a valid number.");
     return;
 }
 
