@@ -10,3 +10,7 @@ if (!double.TryParse(input, out double number))
     Console.WriteLine("Invalid number.");
     return;
 }
+
+double result = StatisticsHelper.Square(number);
+
+Console.WriteLine($"Square: {result}");
