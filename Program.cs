@@ -1,2 +1,6 @@
 ﻿Console.WriteLine("Simple statistics app");
-Console.WriteLine("Enter a number:");
+Console.Write("Enter a number: ");
+
+string? input = Console.ReadLine();
+
+Console.WriteLine($"You entered: {input}");
