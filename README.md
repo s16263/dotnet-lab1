@@ -1,19 +1,22 @@
 # dotnet-lab1
 
-Project for Git exercises.
+Projekt został wykonany w ramach ćwiczeń z systemu kontroli wersji Git.  
+Repozytorium zawiera historię pracy z wykorzystaniem commitów, gałęzi, merge, rebase oraz rozwiązania konfliktu.
 
-## Non fast-forward merge
+## 1. Kiedy Git wykona fast-forward, a kiedy powstaje merge commit?
 
-This merge was not fast-forward because both branches had new commits.
-The master branch had its own commit and the feature-max branch had another one,
-so Git created a merge commit to combine the histories.
+Git wykona merge typu **fast-forward**, gdy gałąź docelowa nie posiada nowych commitów od momentu utworzenia gałęzi roboczej. W takiej sytuacji Git jedynie przesuwa wskaźnik gałęzi do przodu.
 
-## Rebase example
-This repository contains an example of git rebase.
+**Merge commit** powstaje wtedy, gdy obie gałęzie mają własne nowe commity i ich historie się rozeszły. Wtedy Git musi połączyć je specjalnym commitem scalającym.
 
-## Merge vs Rebase
+## 2. Czym w praktyce różni się merge od rebase?
 
-Merge keeps the original branch history and creates a merge commit.
+**Merge** łączy dwie gałęzie zachowując ich oryginalną historię. W większości przypadków powstaje dodatkowy commit scalający, który pokazuje moment połączenia gałęzi.
 
-Rebase moves commits to the top of another branch and creates a cleaner,
-linear history without additional merge commits.
+**Rebase** przenosi commity z jednej gałęzi na koniec drugiej gałęzi. Powoduje to, że historia projektu jest bardziej liniowa i czytelna, ponieważ wygląda tak, jakby wszystkie commity powstały jeden po drugim.
+
+## 3. W jaki sposób został rozwiązany konflikt w repozytorium?
+
+Konflikt został wywołany poprzez zmianę tego samego fragmentu kodu w pliku `Program.cs` na dwóch różnych gałęziach.
+
+Podczas próby wykonania merge Git zgłosił konflikt i w pliku pojawiły się znaczniki konfliktu (`<<<<<<<`, `=======`, `>>>>>>>`). Konflikt został rozwiązany ręcznie poprzez edycję pliku, wybranie odpowiedniej wersji komunikatu oraz usunięcie markerów konfliktu. Następnie poprawiony plik został dodany do repozytorium i zakończono operację merge.
