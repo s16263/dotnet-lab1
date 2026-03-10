@@ -1,14 +1,17 @@
-public static double CalculateAverage(int[] values)
+public static int CalculateMax(int[] values)
 {
     if (values.Length == 0)
         return 0;
 
-    int sum = 0;
+    int max = values[0];
 
     foreach (var value in values)
     {
-        sum += value;
+        if (value > max)
+        {
+            max = value;
+        }
     }
 
-    return (double)sum / values.Length;
+    return max;
 }
