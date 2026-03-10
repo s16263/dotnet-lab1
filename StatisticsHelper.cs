@@ -1,7 +1,14 @@
-public static class StatisticsHelper
+public static double CalculateAverage(int[] values)
 {
-    public static double Square(double number)
+    if (values.Length == 0)
+        return 0;
+
+    int sum = 0;
+
+    foreach (var value in values)
     {
-        return number * number;
+        sum += value;
     }
+
+    return (double)sum / values.Length;
 }
