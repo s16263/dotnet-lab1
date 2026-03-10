@@ -10,3 +10,10 @@ so Git created a merge commit to combine the histories.
 
 ## Rebase example
 This repository contains an example of git rebase.
+
+## Merge vs Rebase
+
+Merge keeps the original branch history and creates a merge commit.
+
+Rebase moves commits to the top of another branch and creates a cleaner,
+linear history without additional merge commits.
